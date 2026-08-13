@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class ExceptionDemo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // NumberFormatException
+        try {
+            System.out.print("Enter your age: ");
+            String age = sc.nextLine();
+
+            int a = Integer.parseInt(age);
+            System.out.println("Age = " + a);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid age entered.");
+        }
+
+        // ArithmeticException
+        try {
+            int x = 10;
+            int y = 0;
+
+            int result = x / y;
+
+            System.out.println(result);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero.");
+        }
+
+        sc.close();
+    }
+}
